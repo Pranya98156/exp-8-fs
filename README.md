@@ -43,3 +43,28 @@ npm --prefix client run dev
 ```
 
 Frontend runs at `http://localhost:5173` and backend at `http://localhost:5001` by default.
+
+## Deploy to Vercel
+
+This repo is configured for Vercel full-stack deployment with the frontend served from `client/dist` and the backend available under `/api`.
+
+1. Install the Vercel CLI if needed:
+
+```bash
+npm install -g vercel
+```
+
+2. From the repo root, deploy the project:
+
+```bash
+vercel
+```
+
+3. When prompted, select the current project folder and confirm the root.
+
+4. Optional: set environment variables in Vercel for production security:
+
+- `JWT_SECRET`
+- `CLIENT_ORIGIN=https://<your-vercel-domain>`
+
+If you want to deploy through GitHub integration, connect this repo in the Vercel dashboard and Vercel will build automatically on pushes to `main`.
